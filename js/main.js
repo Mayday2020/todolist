@@ -20,8 +20,9 @@ let show = function () {
     toDoItem.textContent = headerInput.value;
 };
 
-headerButton.addEventListener('click', function (){
+headerButton.addEventListener('click', function (event){
+    event.preventDefault();
     let cloneToDo = toDoItem[0].cloneNode(true);
-    toDoItem[0].parentNode.insertBefore(cloneToDo);
+    toDoItem[0].parentNode.insertBefore(cloneToDo, null);
     show();
 });
